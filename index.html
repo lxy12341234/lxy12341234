@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的简单网站</title>
+    
+    <style>
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        h2 {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        .message {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>欢迎来到我的简单网站！</h1>
+    
+    <p>这是一个使用HTML搭建的简单网站示例。</p>
+    
+    <h2>最新消息</h2>
+    <ul>
+        <li><a href="#message1" onclick="showMessage('message1')">消息 1</a></li>
+        <li><a href="#message2" onclick="showMessage('message2')">消息 2</a></li>
+        <li><a href="#message3" onclick="showMessage('message3')">消息 3</a></li>
+    </ul>
+    
+    <div id="message1" class="message" style="display: none;">
+        <h2>消息 1</h2>
+        <p id="message1Content">这是第一条最新消息的内容。</p>
+    </div>
+    
+    <div id="message2" class="message" style="display: none;">
+        <h2>消息 2</h2>
+        <p id="message2Content">这是第二条最新消息的内容。</p>
+    </div>
+    
+    <div id="message3" class="message" style="display: none;">
+        <h2>消息 3</h2>
+        <p id="message3Content">这是第三条最新消息的内容。</p>
+    </div>
+
+    <script>
+        var previousMessageId = null;
+        
+        function showMessage(messageId) {
+            var message = document.getElementById(messageId);
+            
+            if (previousMessageId !== null) {
+                var previousMessage = document.getElementById(previousMessageId);
+                
+                previousMessage.style.display = 'none';
+            }
+            
+            message.style.display = 'block';
+            
+            previousMessageId = messageId;
+        }
+    </script>
+</body>
+</html>
